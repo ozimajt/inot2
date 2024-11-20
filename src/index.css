@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    font-family: 'SF Pro Display', system-ui, sans-serif;
+  }
+}
+
+button {
+  font-family: 'SF Pro Display', system-ui, sans-serif;
+}
+
+.hover-up {
+  transition: transform 0.3s ease;
+}
+
+.hover-up:hover {
+  transform: translateY(-1vh);
+}
+
+.hover-down {
+  transition: all 0.3s ease;
+}
+
+.hover-down:hover {
+  height: calc(var(--base-height) + 2vh) !important;
+}
+
+@media (max-width: 768px) {
+  .hover-up:hover {
+    transform: translateY(-0.75vh);
+  }
+  
+  .hover-down:hover {
+    height: calc(var(--base-height) + 1.5vh) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hover-up:hover {
+    transform: translateY(-0.5vh);
+  }
+  
+  .hover-down:hover {
+    height: calc(var(--base-height) + 1vh) !important;
+  }
+}
